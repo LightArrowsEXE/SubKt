@@ -253,7 +253,7 @@ open class Mux : PropertyTask() {
          */
         @get:Input
         @get:Optional
-        @MuxFlag("commentary")
+        @MuxFlag("commentary-flag")
         val commentary = project.objects.property<Boolean>()
 
         /**
@@ -263,7 +263,7 @@ open class Mux : PropertyTask() {
          */
         @get:Input
         @get:Optional
-        @MuxFlag("hearing-impaired")
+        @MuxFlag("hearing-impaired-flag")
         val hearingImpaired = project.objects.property<Boolean>()
 
         /**
@@ -273,7 +273,7 @@ open class Mux : PropertyTask() {
          */
         @get:Input
         @get:Optional
-        @MuxFlag("visual-impaired")
+        @MuxFlag("visual-impaired-flag")
         val visualImpaired = project.objects.property<Boolean>()
 
         /**
