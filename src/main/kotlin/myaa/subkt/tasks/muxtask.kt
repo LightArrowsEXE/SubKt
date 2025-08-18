@@ -180,6 +180,9 @@ open class Mux : PropertyTask() {
             val name = sourceTrack.properties?.track_name
             val default = sourceTrack.properties?.default_track
             val forced = sourceTrack.properties?.forced_track
+            val commentary = sourceTrack.properties?.commentary_track
+            val hearingImpaired = sourceTrack.properties?.hearing_impaired_track
+            val visualImpaired = sourceTrack.properties?.visual_impaired_track
             val displayDimensios = sourceTrack.properties
                     ?.display_dimensions?.let { Dimensions.fromString(it) }
             val encoding = sourceTrack.properties?.encoding
@@ -242,6 +245,36 @@ open class Mux : PropertyTask() {
         @get:Optional
         @MuxFlag("forced-track")
         val forced = project.objects.property<Boolean>()
+
+        /**
+         * If true, set this track to be a commentary track.
+         *
+         * Corresponds to the `--commentary` mkvmerge flag.
+         */
+        @get:Input
+        @get:Optional
+        @MuxFlag("commentary")
+        val commentary = project.objects.property<Boolean>()
+
+        /**
+         * If true, set this track to be a hearing impaired track.
+         *
+         * Corresponds to the `--hearing-impaired` mkvmerge flag.
+         */
+        @get:Input
+        @get:Optional
+        @MuxFlag("hearing-impaired")
+        val hearingImpaired = project.objects.property<Boolean>()
+
+        /**
+         * If true, set this track to be a visual impaired track.
+         *
+         * Corresponds to the `--visual-impaired` mkvmerge flag.
+         */
+        @get:Input
+        @get:Optional
+        @MuxFlag("visual-impaired")
+        val visualImpaired = project.objects.property<Boolean>()
 
         /**
          * Sets the display dimensions of this track, specified as a [Dimensions] object, e.g.:
