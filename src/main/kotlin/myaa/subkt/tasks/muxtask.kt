@@ -183,6 +183,7 @@ open class Mux : PropertyTask() {
             val commentary = sourceTrack.properties?.commentary_track
             val hearingImpaired = sourceTrack.properties?.hearing_impaired_track
             val visualImpaired = sourceTrack.properties?.visual_impaired_track
+            val originalLanguage = sourceTrack.properties?.original_language
             val displayDimensios = sourceTrack.properties
                     ?.display_dimensions?.let { Dimensions.fromString(it) }
             val encoding = sourceTrack.properties?.encoding
@@ -275,6 +276,16 @@ open class Mux : PropertyTask() {
         @get:Optional
         @MuxFlag("visual-impaired-flag")
         val visualImpaired = project.objects.property<Boolean>()
+
+        /**
+         * If true, set this track to be a original language track.
+         *
+         * Corresponds to the `--original-flag` mkvmerge flag.
+         */
+        @get:Input
+        @get:Optional
+        @MuxFlag("original-flag")
+        val originalLanguage = project.objects.property<Boolean>()
 
         /**
          * Sets the display dimensions of this track, specified as a [Dimensions] object, e.g.:

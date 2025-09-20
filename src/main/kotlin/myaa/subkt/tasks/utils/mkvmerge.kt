@@ -97,6 +97,7 @@ data class MkvTrackProperties(
     val hearing_impaired_track: Boolean? = null,
     val visual_impaired_track: Boolean? = null,
     val language: String? = null,
+    val original_language: Boolean? = null,
     val minimum_timestamp: Long? = null,
     val multiplexed_tracks: List<Long>? = null,
     val number: Long? = null,
