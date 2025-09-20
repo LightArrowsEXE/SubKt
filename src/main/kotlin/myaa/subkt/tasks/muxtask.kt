@@ -180,6 +180,7 @@ open class Mux : PropertyTask() {
             val name = sourceTrack.properties?.track_name
             val default = sourceTrack.properties?.default_track
             val forced = sourceTrack.properties?.forced_track
+            val enabled = sourceTrack.properties?.enabled_track
             val commentary = sourceTrack.properties?.commentary_track
             val hearingImpaired = sourceTrack.properties?.hearing_impaired_track
             val visualImpaired = sourceTrack.properties?.visual_impaired_track
@@ -246,6 +247,16 @@ open class Mux : PropertyTask() {
         @get:Optional
         @MuxFlag("forced-track")
         val forced = project.objects.property<Boolean>()
+
+        /**
+         * If true, set this track as enabled.
+         *
+         * Corresponds to the `--track-enabled` mkvmerge flag.
+         */
+        @get:Input
+        @get:Optional
+        @MuxFlag("track-enabled-flag")
+        val enabled = project.objects.property<Boolean>()
 
         /**
          * If true, set this track to be a commentary track.
