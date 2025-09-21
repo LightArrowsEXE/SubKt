@@ -90,7 +90,6 @@ data class MkvTrackProperties(
     val default_track: Boolean? = null,
     val display_dimensions: String? = null,
     val display_unit: Long? = null,
-    val enabled_track: Boolean? = null,
     val encoding: String? = null,
     val forced_track: Boolean? = null,
     val enabled_track: Boolean? = null,
